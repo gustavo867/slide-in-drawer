@@ -15,14 +15,21 @@ import {
   SignOutScreen  
 } from './src/screens';
 
-const DrawerNavigator = createDrawerNavigator({
-  ProfileScreen, 
-  MessageScreen, 
-  ActivityScreen, 
-  ListScreen, 
-  ReportScreen, 
-  StatisticScreen, 
-  SignOutScreen 
-})
+import SideBar from './src/components/SideBar';
+
+const DrawerNavigator = createDrawerNavigator(
+  {
+    ProfileScreen, 
+    MessageScreen, 
+    ActivityScreen, 
+    ListScreen, 
+    ReportScreen, 
+    StatisticScreen, 
+    SignOutScreen 
+  }, 
+  {
+    contentComponent: props => <SideBar {...props}/>
+  }
+);
 
 export default createAppContainer(DrawerNavigator);
